@@ -46,16 +46,6 @@ class Eurovatgenerator extends Module
 		$this->description = $this->l('This tool helps you to be compliant with the new European Law about virtual products.');
 	}
 
-	public function install()
-	{
-		return parent::install();
-	}
-
-	public function uninstall()
-	{
-		return parent::uninstall();
-	}
-
 	public function getContent()
 	{
 		$this->_postProcess();
