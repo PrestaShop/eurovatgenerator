@@ -98,7 +98,7 @@ class Eurovatgenerator extends Module
 						'VAT IE 23%'		=>	array('iso_country' => 'ie', 'rate' => 23),
 						'IVA IT 22%'		=>	array('iso_country' => 'it', 'rate' => 22),
 						'PVM LT 21%'		=>	array('iso_country' => 'lt', 'rate' => 21),
-						'TVA LU 15%'		=>	array('iso_country' => 'lu', 'rate' => 15),
+						'TVA LU 17%'		=>	array('iso_country' => 'lu', 'rate' => 17),
 						'PVN LV 21%'		=>	array('iso_country' => 'lv', 'rate' => 21),
 						'VAT MT 18%'		=>	array('iso_country' => 'mt', 'rate' => 18),
 						'BTW NL 21%'		=>	array('iso_country' => 'nl', 'rate' => 21),
