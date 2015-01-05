@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2015 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,14 +18,14 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author    PrestaShop SA <contact@prestashop.com>
-*  @copyright 2007-2014 PrestaShop SA
+*  @copyright 2007-2015 PrestaShop SA
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
 {if $errors}
 	{foreach from=$errors item=error}
-		{$error}
+		{$error|escape:'htmlall':'UTF-8'}
 	{/foreach}
 {/if}
 
@@ -51,7 +51,7 @@
 
 				<div class="col-md-3">
 					<label class="pull-right" >
-						{$euro_vat.eur_vat_label}:
+						{$euro_vat.eur_vat_label|escape:'htmlall':'UTF-8'}:
 						<span class="badge {if $euro_vat.vat_found}badge-success{else}badge-danger{/if}">
 							<i class="icon {if $euro_vat.vat_found}icon-check{else}icon-remove{/if}"></i>
 						</span>
@@ -59,7 +59,7 @@
 				</div>
 
 				<div class="col-md-3">
-					<select name="euro_vat_{$euro_vat.iso_country}">
+					<select name="euro_vat_{$euro_vat.iso_country|escape:'htmlall':'UTF-8'}">
 					  <option value="exists" {if $euro_vat.vat_found}selected{/if}>{l s='VAT already exists on my shop' mod='eurovatgenerator'}</option>
 					  <option value="not_found" {if !$euro_vat.vat_found}selected{/if}>{l s='VAT does not exists - it will be created' mod='eurovatgenerator'}</option>
 					</select>
@@ -68,10 +68,10 @@
 				<div class="col-md-3">
 
 				{if $euro_vat.vat_found}
-					<select name="available_vat_{$euro_vat.iso_country}">
+					<select name="available_vat_{$euro_vat.iso_country|escape:'htmlall':'UTF-8'}">
 					{foreach from=$available_vat_list key=key item=tax}
 					 
-					  <option value="{$key}" {if $euro_vat.euro_vat_name == $tax}selected{/if}>{$tax}</option>
+					  <option value="{$key}" {if $euro_vat.euro_vat_name == $tax}selected{/if}>{$tax|escape:'htmlall':'UTF-8'}</option>
 
 					{/foreach}
 					</select> 

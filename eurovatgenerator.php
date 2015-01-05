@@ -1,6 +1,6 @@
 <?php
 /**
-* 2007-2014 PrestaShop
+* 2007-2015 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -19,7 +19,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author    PrestaShop SA <contact@prestashop.com>
-*  @copyright 2007-2014 PrestaShop SA
+*  @copyright 2007-2015 PrestaShop SA
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
@@ -147,7 +147,7 @@ class Eurovatgenerator extends Module
 				$euro_vat_array[$euro_vat_name]['vat_found'] = false;
 
 			$euro_vat_array[$euro_vat_name]['eur_vat_label'] = (string)$country_name.' ('.(string)$eur_vat_details['iso_country'].
-												')'.(strlen($euro_vat_name) > 3) ? ' - '.(string)substr($euro_vat_name, -3) : '';
+												')'.(Tools::strlen($euro_vat_name) > 3) ? ' - '.(string)Tools::substr($euro_vat_name, -3) : '';
 
 			$euro_vat_array[$euro_vat_name]['country_name'] = $country_name;
 			$euro_vat_array[$euro_vat_name]['iso_country'] = (string)$eur_vat_details['iso_country'];
@@ -161,7 +161,7 @@ class Eurovatgenerator extends Module
 	{
 		$euro_vat_array = $this->getEuroVATDataArray();
 
-		foreach ($euro_vat_array as $euro_vat_name => $euro_vat_details)
+		foreach ($euro_vat_array as $euro_vat_details)
 		{
 			if ($iso_country == $euro_vat_details['iso_country'])
 				return $euro_vat_details;
@@ -235,7 +235,7 @@ class Eurovatgenerator extends Module
 					$tax->rate = (float)$euro_vat_details['rate'];
 					$tax->active = 1;
 
-					if (($error = $tax->validateFields(false, true)) !== true || ($error = $tax->validateFieldsLang(false, true)) !== true)
+					if (($tax->validateFields(false, true) !== true) || ($tax->validateFieldsLang(false, true) !== true))
 					{
 						$this->_errors[] = Tools::displayError('Invalid tax properties.');
 						continue;
