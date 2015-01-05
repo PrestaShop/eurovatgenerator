@@ -29,6 +29,36 @@ if (!defined('_PS_VERSION_'))
 
 class Eurovatgenerator extends Module
 {
+	public static $europe_vat_array = array(
+												'TVA FR 20%' 		=>	array('iso_country' => 'fr', 'rate' => 20),
+												'USt. AT 20%'		=>	array('iso_country' => 'at', 'rate' => 20),
+												'TVA BE 21%'		=>	array('iso_country' => 'be', 'rate' => 21),
+												'ДДС BG 20%'		=>	array('iso_country' => 'bg', 'rate' => 20),
+												'ΦΠΑ CY 19%'		=>	array('iso_country' => 'cy', 'rate' => 19),
+												'DPH CZ 21%'		=>	array('iso_country' => 'cz', 'rate' => 21),
+												'MwSt. DE 19%'		=>	array('iso_country' => 'de', 'rate' => 19),
+												'moms DK 25%'		=>	array('iso_country' => 'dk', 'rate' => 25),
+												'km EE 20%'			=>	array('iso_country' => 'ee', 'rate' => 20),
+												'IVA ES 21%'		=>	array('iso_country' => 'es', 'rate' => 21),
+												'ALV FI 24%'		=>	array('iso_country' => 'fi', 'rate' => 24),
+												'VAT UK 20%'		=>	array('iso_country' => 'gb', 'rate' => 20),
+												'ΦΠΑ GR 23%'		=>	array('iso_country' => 'gr', 'rate' => 23),
+												'Croatia PDV 25%'	=>	array('iso_country' => 'hr', 'rate' => 25),
+												'ÁFA HU 27%'		=>	array('iso_country' => 'hu', 'rate' => 27),
+												'VAT IE 23%'		=>	array('iso_country' => 'ie', 'rate' => 23),
+												'IVA IT 22%'		=>	array('iso_country' => 'it', 'rate' => 22),
+												'PVM LT 21%'		=>	array('iso_country' => 'lt', 'rate' => 21),
+												'TVA LU 17%'		=>	array('iso_country' => 'lu', 'rate' => 17),
+												'PVN LV 21%'		=>	array('iso_country' => 'lv', 'rate' => 21),
+												'VAT MT 18%'		=>	array('iso_country' => 'mt', 'rate' => 18),
+												'BTW NL 21%'		=>	array('iso_country' => 'nl', 'rate' => 21),
+												'PTU PL 23%'		=>	array('iso_country' => 'pl', 'rate' => 23),
+												'IVA PT 23%'		=>	array('iso_country' => 'pt', 'rate' => 23),
+												'TVA RO 24%'		=>	array('iso_country' => 'ro', 'rate' => 24),
+												'Moms SE 25%'		=>	array('iso_country' => 'se', 'rate' => 25),
+												'DDV SI 22%'		=>	array('iso_country' => 'si', 'rate' => 22),
+												'DPH SK 20%'		=>	array('iso_country' => 'sk', 'rate' => 20)
+											);
 	public function __construct()
 	{
 		$this->name = 'eurovatgenerator';
@@ -77,7 +107,7 @@ class Eurovatgenerator extends Module
 		return $output;
 	}
 
-	private function getEuroVATDataArray()
+	/*private function getEuroVATDataArray()
 	{
 		return array(
 						'TVA FR 20%' 		=>	array('iso_country' => 'fr', 'rate' => 20),
@@ -110,7 +140,7 @@ class Eurovatgenerator extends Module
 						'DPH SK 20%'		=>	array('iso_country' => 'sk', 'rate' => 20)
 					);
 
-	}
+	}*/
 
 	private function getAvailableTaxesDetails()
 	{
@@ -130,7 +160,7 @@ class Eurovatgenerator extends Module
 	private function getVATDetailsByCountry()
 	{
 		$user_lang = (int)$this->context->employee->id_lang;
-		$euro_vat_array = $this->getEuroVATDataArray();
+		$euro_vat_array = self::$europe_vat_array;
 		$available_vat_array = $this->getAvailableTaxesDetails();
 
 		foreach ($euro_vat_array as $euro_vat_name => $eur_vat_details)
@@ -147,19 +177,18 @@ class Eurovatgenerator extends Module
 				$euro_vat_array[$euro_vat_name]['vat_found'] = false;
 
 			$euro_vat_array[$euro_vat_name]['eur_vat_label'] = (string)$country_name.' ('.(string)$eur_vat_details['iso_country'].
-												')'.(Tools::strlen($euro_vat_name) > 3) ? ' - '.(string)Tools::substr($euro_vat_name, -3) : '';
+												')'.((Tools::strlen($euro_vat_name) > 3) ? ' - '.(string)Tools::substr($euro_vat_name, -3) : '');
 
 			$euro_vat_array[$euro_vat_name]['country_name'] = $country_name;
 			$euro_vat_array[$euro_vat_name]['iso_country'] = (string)$eur_vat_details['iso_country'];
 			$euro_vat_array[$euro_vat_name]['euro_vat_name'] = (string)$euro_vat_name;
 		}
-
 		return $euro_vat_array;
 	}
 
 	private function getVATDataFromIsoCountry($iso_country)
 	{
-		$euro_vat_array = $this->getEuroVATDataArray();
+		$euro_vat_array = self::$europe_vat_array;
 
 		foreach ($euro_vat_array as $euro_vat_details)
 		{
@@ -189,7 +218,7 @@ class Eurovatgenerator extends Module
 
 	private function generateEuropeTaxRule()
 	{
-		$euro_vat_array = $this->getEuroVATDataArray();
+		$euro_vat_array = self::$europe_vat_array;
 		$euro_tax_rule_grp_id = TaxRulesGroup::getIdByName((string)$this->european_vat_name);
 
 		if (!$euro_tax_rule_grp_id)
