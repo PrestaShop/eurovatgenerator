@@ -80,10 +80,10 @@ class Eurovatgenerator extends Module
 	private function getEuroVATDataArray()
 	{
 		return array(
-						'TVA FR 20%' 		=>	array('iso_country' => 'fr', 'rate' => 20),	
+						'TVA FR 20%' 		=>	array('iso_country' => 'fr', 'rate' => 20),
 						'USt. AT 20%'		=>	array('iso_country' => 'at', 'rate' => 20),
 						'TVA BE 21%'		=>	array('iso_country' => 'be', 'rate' => 21),
-						'ДДС BG 20%'		=>	array('iso_country' => 'bg', 'rate' => 20),	
+						'ДДС BG 20%'		=>	array('iso_country' => 'bg', 'rate' => 20),
 						'ΦΠΑ CY 19%'		=>	array('iso_country' => 'cy', 'rate' => 19),
 						'DPH CZ 21%'		=>	array('iso_country' => 'cz', 'rate' => 21),
 						'MwSt. DE 19%'		=>	array('iso_country' => 'de', 'rate' => 19),
@@ -130,7 +130,7 @@ class Eurovatgenerator extends Module
 	private function getVATDetailsByCountry()
 	{
 		$user_lang = (int)$this->context->employee->id_lang;
-		$euro_vat_array =  $this->getEuroVATDataArray();
+		$euro_vat_array = $this->getEuroVATDataArray();
 		$available_vat_array = $this->getAvailableTaxesDetails();
 
 		foreach ($euro_vat_array as $euro_vat_name => $eur_vat_details)
@@ -264,7 +264,6 @@ class Eurovatgenerator extends Module
 					$tr->description = '';
 					$tr->id_tax = (int)$tax->id;
 					$tr->save();
-	
 				}
 				else
 				{
@@ -291,7 +290,7 @@ class Eurovatgenerator extends Module
 			else
 				$this->_errors[] = Tools::displayError('Invalid parameters received');
 		}
-	}	
+	}
 
 	protected function _postProcess()
 	{
