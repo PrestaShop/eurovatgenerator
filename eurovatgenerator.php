@@ -73,7 +73,7 @@ class Eurovatgenerator extends Module
 		parent::__construct();
 
 		$this->displayName = $this->l('Europe VAT Generator');
-		$this->description = $this->l('This tool helps you to be compliant with the new European Law about virtual products.');
+		$this->description = $this->l('Easily get compliant with the new European VAT rules for virtual products.');
 	}
 
 	public function getContent()
