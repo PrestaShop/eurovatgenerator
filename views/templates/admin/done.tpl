@@ -27,7 +27,7 @@
 	{l s='All the taxes have been created. A new tax rule “European VAT for virtual products” is now available.' mod='eurovatgenerator'}
 </div>
 
-<h3>{l s='What should I do now?' mod='eurovatgenerator'}</h3>
+<h3> {l s='What should I do now?' mod='eurovatgenerator'}</h3>
 <fieldset>
 	<p>
 		{l s='All the taxes have been created and gathered under a new tax rule “European VAT for virtual products”.' mod='eurovatgenerator'}<br />

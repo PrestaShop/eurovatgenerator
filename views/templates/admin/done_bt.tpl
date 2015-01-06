@@ -29,7 +29,7 @@
 </div>
 
 <div class="panel">
-	<h3><i class="icon icon-info-sign"></i>{l s='What should I do now?' mod='eurovatgenerator'}</h3>
+	<h3><i class="icon icon-info-sign"></i> {l s='What should I do now?' mod='eurovatgenerator'}</h3>
 	<p>
 		{l s='All the taxes have been created and gathered under a new tax rule “European VAT for virtual products”.' mod='eurovatgenerator'}<br />
 		{l s='You now have to assign this new tax rule to the virtual products that are liable to be affected.' mod='eurovatgenerator'}<br />

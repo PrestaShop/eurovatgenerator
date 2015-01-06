@@ -32,7 +32,7 @@
 <div class="panel">
 	<h3><i class="icon icon-info-sign"></i> {l s='European VAT for virtual products' mod='eurovatgenerator'}</h3>
 	<p>
-		{l s='This module helps you to easily create the needed European taxes so that you can comply with this new rule.' mod='eurovatgenerator'}<br />
+		{l s='This module helps you to easily create the needed European taxes so that you can comply with the new rule on VAT for virtual products.' mod='eurovatgenerator'}<br />
 		{l s='Once done, you will have to amend your product catalog by assigning this European tax rule to the relevant virtual products.' mod='eurovatgenerator'}
 	</p>
 </div>
@@ -61,7 +61,7 @@
 				<div class="col-md-3">
 					<select name="euro_vat_{$euro_vat.iso_country|escape:'htmlall':'UTF-8'}">
 					  <option value="exists" {if $euro_vat.vat_found}selected{/if}>{l s='VAT already exists on my shop' mod='eurovatgenerator'}</option>
-					  <option value="not_found" {if !$euro_vat.vat_found}selected{/if}>{l s='VAT does not exists - it will be created' mod='eurovatgenerator'}</option>
+					  <option value="not_found" {if !$euro_vat.vat_found}selected{/if}>{l s='VAT does not exist - it will be created' mod='eurovatgenerator'}</option>
 					</select>
 				</div>
 

@@ -3,7 +3,7 @@
             <name>eurovatgenerator</name>
             <displayName><![CDATA[Europe VAT Generator]]></displayName>
             <version><![CDATA[1.0.0]]></version>
-            <description><![CDATA[This tool helps you to be compliant with the new European Law about virtual products.]]></description>
+            <description><![CDATA[Easily get compliant with the new European VAT rules for virtual products.]]></description>
             <author><![CDATA[PrestaShop]]></author>
             <tab><![CDATA[pricing_promotion]]></tab>
             <is_configurable>1</is_configurable>
