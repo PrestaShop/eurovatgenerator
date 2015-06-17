@@ -230,7 +230,7 @@ class Eurovatgenerator extends Module
 
 			if (!$trg->save())
 			{
-				$this->_errors[] = Tools::displayError('Tax rule cannot be saved.');
+				$this->_errors[] = Tools::displayError('This tax rule cannot be saved.');
 				return false;
 			}
 
