@@ -54,7 +54,7 @@ class Eurovatgenerator extends Module
 												'BTW NL 21%'		=>	array('iso_country' => 'nl', 'rate' => 21),
 												'PTU PL 23%'		=>	array('iso_country' => 'pl', 'rate' => 23),
 												'IVA PT 23%'		=>	array('iso_country' => 'pt', 'rate' => 23),
-												'TVA RO 24%'		=>	array('iso_country' => 'ro', 'rate' => 24),
+												'TVA RO 20%'		=>	array('iso_country' => 'ro', 'rate' => 20),
 												'Moms SE 25%'		=>	array('iso_country' => 'se', 'rate' => 25),
 												'DDV SI 22%'		=>	array('iso_country' => 'si', 'rate' => 22),
 												'DPH SK 20%'		=>	array('iso_country' => 'sk', 'rate' => 20)
@@ -134,7 +134,7 @@ class Eurovatgenerator extends Module
 						'BTW NL 21%'		=>	array('iso_country' => 'nl', 'rate' => 21),
 						'PTU PL 23%'		=>	array('iso_country' => 'pl', 'rate' => 23),
 						'IVA PT 23%'		=>	array('iso_country' => 'pt', 'rate' => 23),
-						'TVA RO 24%'		=>	array('iso_country' => 'ro', 'rate' => 24),
+						'TVA RO 20%'		=>	array('iso_country' => 'ro', 'rate' => 20),
 						'Moms SE 25%'		=>	array('iso_country' => 'se', 'rate' => 25),
 						'DDV SI 22%'		=>	array('iso_country' => 'si', 'rate' => 22),
 						'DPH SK 20%'		=>	array('iso_country' => 'sk', 'rate' => 20)
