@@ -63,7 +63,7 @@ class Eurovatgenerator extends Module
 	{
 		$this->name = 'eurovatgenerator';
 		$this->tab = 'pricing_promotion';
-		$this->version = '1.1.0';
+		$this->version = '1.1.1';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 1;
 		$this->bootstrap = true;
